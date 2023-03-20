@@ -4,11 +4,10 @@ WORKDIR /app
 
 COPY package*.json ./
 
-RUN npm install
-
-COPY . .
-
-RUN npm run build
+RUN npm install -g npm@9.3.1
+RUN npm install -g @apidevtools/swagger-cli
+COPY . ./
+RUN npm install --save nuxt
 
 EXPOSE 8080
 
