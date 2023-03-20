@@ -20,11 +20,11 @@ pipeline {
             stage('Build App Docker Images') {
                         steps {
                             echo 'Building App Dev Images'
-                            sh 'echo $DOCKER_PASSWORD | docker login -u karacaaslan --password-stdin'
-                            sh "docker build -t karacaaslan/todoserver -f ./todoserver/Dockerfile ./todoserver"
-                            sh 'docker push karacaaslan/todoserver'
-                            sh "docker build -t karacaaslan/todoapp -f ./todoapp/Dockerfile ./todoapp"
-                            sh 'docker push karacaaslan/todoapp'
+                            sh 'echo $DOCKER_PASSWORD | docker login -u acydevops --password-stdin'
+                            sh "docker build -t acydevops/todoserver -f ./todoserver/Dockerfile ./todoserver"
+                            sh 'docker push acydevops/todoserver'
+                            sh "docker build -t acydevops/todoapp -f ./todoapp/Dockerfile ./todoapp"
+                            sh 'docker push acydevops/todoapp'
                         }
                     }
             
