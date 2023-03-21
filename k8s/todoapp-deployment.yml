@@ -23,5 +23,4 @@ spec:
       initContainers:
         - name: init-todoserver-service
           image: busybox
-          command: ['sh', '-c', 'until nc -z todoserver-service:80; do echo waiting for todoserver-service; sleep 2; done;']     
-           
+          command: ['sh', '-c', 'until nc -z todoserver-service:8000; do echo waiting for todoserver-service; sleep 2; done;']     

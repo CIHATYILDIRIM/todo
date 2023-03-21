@@ -21,17 +21,17 @@ spec:
           ports:
           - containerPort: 8000
           env:
+            # - name: POSTGRESQL_HOST
+            #   value: postgres-service          
             - name: SPRING_DATASOURCE_URL
-              value: jdbc:postgresql://localhost:5432/todo_db
-            - name: SPRING_DATASOURCE_PASSWORD
-              value: "admin"  
-            - name: SPRING_DATASOURCE_USERNAME
-              value: "postgres"
-
-
-
+              value: jdbc:postgresql://postgres-service:5432/todo_db
+            # - name: POSTGRES_PASSWORD
+            #   value: "admin"  
+            # - name: POSTGRES_USER
+            #   value: "postgres"
+            # - name: POSTGRES_DB
+            #   value: todo_db
       initContainers:
         - name: init-postgres-service
           image: busybox
-          command: ['sh', '-c', 'until nc -z postgres-service:5432; do echo waiting for postgres-service; sleep 2; done;']     
-           
+          command: ['sh', '-c', 'until nc -z postgres-service:5432; do echo waiting for postgres-service; sleep 2; done;']                    

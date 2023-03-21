@@ -18,13 +18,12 @@ spec:
           image: dpage/pgadmin4
           env:
            - name: PGADMIN_DEFAULT_EMAIL
-             value: ${PGADMIN_DEFAULT_EMAIL:-pgadmin4@pgadmin.org}
+             value: "acy2045@gmail.com"
            - name: PGADMIN_DEFAULT_PASSWORD
-             value: ${PGADMIN_DEFAULT_PASSWORD:-admin}
+             value: "admin"
            - name: PGADMIN_CONFIG_SERVER_MODE   
              value: 'False'
-           - name: PGADMIN_PORT
-             value: "${PGADMIN_PORT:-5050}:80"
+
           ports:
             - containerPort: 80
               name: pgadminport
