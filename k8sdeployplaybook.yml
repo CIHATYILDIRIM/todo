@@ -1,5 +1,5 @@
 - name: Apply Kubernetes manifest file
-  hosts: k8s
+  hosts: all
   gather_facts: No
   any_errors_fatal: true
   
